@@ -1,8 +1,17 @@
 import React,{useState} from 'react'
+import {useTodo} from '../context/TodoContext';
+
+
 
 const Add = () => {
+    const {dispatch} = useTodo();
     const [text,setText] = useState('');
     const addTodo = () => {
+        dispatch(
+            {
+               type:'ADD_TODO',
+               payload: {id:Date.now(), text:text} 
+            })
 
     }
     return (

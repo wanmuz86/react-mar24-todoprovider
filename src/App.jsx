@@ -2,14 +2,16 @@ import { useState } from 'react'
 import './App.css'
 import Add from './components/Add';
 import List from './components/List';
-
+import {TodoProvider} from './context/TodoContext';
 function App() {
-  const [count, setCount] = useState(0)
+
 
   return (
     <>
-      <Add/>
-      <List/>
+      <TodoProvider>
+        <Add />
+        <List />
+      </TodoProvider>
     </>
   )
 }
